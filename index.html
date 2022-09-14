@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script type="module" src="assets/js/script.js" defer></script>
+    <script type="module" src="assets/js/main.js"></script>
     <title>Hackers-poulette</title>
 </head>
 <body>
-    <form id="form" action="assets/php/index.php" method="post" enctype="multipart/form­data">
+    <form id="form" action="assets/php/index.php" method="post">
         <label for="name"> Name :</label>
-        <input class="input" type="text" name="name" value="">
+        <input id="name" class="input" type="text" name="name" value="">
         <label for="firstname"> Firstname :</label>
-        <input class="input" type="text" name="firstname" value="">
+        <input id="firstname" class="input" type="text" name="firstname" value="">
         <label for="email"> Email adress :</label>
-        <input class="input" type="mail" name="email" value="">
+        <input id="email" class="input" type="email" name="email" value="">
         <label for="file"> File :</label>
-        <input class="input" type="file" name="file" value="" accept=".jpg, .png, .gif">
+        <input id="file" class="input" type="file" name="file" value="" accept=".jpg, .png, .gif">
         <label for="description"> Description :</label>
-        <input class="input" type="text" name="description" value="">
+        <input id="description" class="input" type="text" name="description" value="">
         
         <input id="submit" type="submit" name="submit" value="Submit">
     </form>

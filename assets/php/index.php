@@ -1,6 +1,5 @@
 <a href="../../index.html">Retour au formulaire</a>
 <?php
-include "dbConnect.php";
 var_dump($_POST);
   if (	isset($_POST['name']) AND
   		isset($_POST['firstname']) AND
@@ -8,27 +7,42 @@ var_dump($_POST);
         isset($_POST['file']) AND
   		isset($_POST['description'])) {
 
-        if (empty($_POST['name']) AND
-            empty($_POST['firstname']) AND
-            empty($_POST['email']) AND
-            empty($_POST['description'])) {
-            echo "Variable empty.<br>";
-        } else {
+        if (!empty($_POST['name']) AND
+            !empty($_POST['firstname']) AND
+            !empty($_POST['email']) AND
+            !empty($_POST['description'])) {
             
-			try {
-			    $request = $db->prepare("INSERT INTO support (`name`, `firstname`, `email`, `file`, `description`)
-					VALUES ( ?, ?, ?, ?, ?)");
-			    $request->execute(array(
-				    $_POST['name'],
-				    $_POST['firstname'],
-				    $_POST['email'],
-				    $_POST['file'],
-				    $_POST['description']));
+				include "dbConnect.php";
 
-			    echo "Your request has been successfully sent.";
-		    } catch (Exception $e) {
-			    echo $e->getMessage();
-		    }
+				// SANITIZE
+				$name = htmlspecialchars($_POST['name']);
+				$firstname = htmlspecialchars($_POST['firstname']);
+				$email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
+				$description = htmlspecialchars($_POST['description']);
+	
+				// VALIDATE
+				if (false === filter_var($email, FILTER_VALIDATE_EMAIL)) {
+					$errors['email'] = "This email is invalid.";
+				}
+			
+	
+				try {
+					$request = $db->prepare("INSERT INTO support (`name`, `firstname`, `email`, `file`, `description`)
+						VALUES ( ?, ?, ?, ?, ?)");
+					$request->execute(array(
+						$name,
+						$firstname,
+						$email,
+						$_POST['file'],
+						$description));
+	
+					echo "Your request has been successfully sent.";
+				} catch (Exception $e) {
+					echo $e->getMessage();
+				}	
+
+        } else {
+            echo "Variable is empty.<br>";
         }
 	}
 ?>
