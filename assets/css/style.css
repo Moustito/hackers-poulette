@@ -1,10 +1,49 @@
-#form {
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+body h1 {
+  color: black;
+  font-size: 100px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  margin: 50px, 50px, 0px, 50px;
 }
-#form input {
+body hr {
+  width: 20%;
+  margin-bottom: 50px;
+  border: 1px solid red;
+}
+body #form {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr;
+  grid-template-areas: "name email" "firstname file" "description description" "submit submit";
+}
+body #form .input {
+  border: 0;
+  border-bottom: 1px solid #929090;
   margin: 10px;
+}
+body #form #name {
+  grid-area: name;
+}
+body #form #firstname {
+  grid-area: firstname;
+}
+body #form #email {
+  grid-area: email;
+}
+body #form #file {
+  grid-area: file;
+  border-bottom: 1px solid #929090;
+}
+body #form #description {
+  grid-area: description;
+}
+body #form #submit {
+  grid-area: submit;
+  margin-top: 50px;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: 0;
 }

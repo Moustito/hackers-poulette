@@ -1,7 +1,7 @@
 export function inputEmpty(input) {
     if (input.value == "") {
-        input.style.border = "2px solid red";
+        input.style.borderBottom = "1px solid red";
     } else {
-        input.style.border = "2px solid black";
+        input.style.borderBottom = "1px solid black";
     }
 }
