@@ -12,12 +12,12 @@
 <body>
     <h1>Contact</h1>
     <hr>
-    <form id="form" action="assets/php/index.php" method="post">
+    <form id="form" action="assets/php/index.php" method="post" enctype="multipart/form-data">
         <input id="name" class="input" type="text" name="name" value="" placeholder="Name">
         <input id="firstname" class="input" type="text" name="firstname" value="" placeholder="Firstname">
         <input id="email" class="input" type="email" name="email" value="" placeholder="Email">
         <input id="file" class="input" type="file" name="file" value="" accept=".jpg, .png, .gif">
-        <input id="description" class="input" type="text" name="description" value="" placeholder="Description...">
+        <textarea id="description" class="input" type="text" name="description" value="" placeholder="Description..."></textarea>
         
         <input id="submit" type="submit" name="submit" value="Submit">
     </form>

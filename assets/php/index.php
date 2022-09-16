@@ -1,19 +1,15 @@
 <a href="../../index.html">Retour au formulaire</a>
 <?php
-var_dump($_POST);
   if (	isset($_POST['name']) AND
   		isset($_POST['firstname']) AND
   		isset($_POST['email']) AND
-        isset($_POST['file']) AND
   		isset($_POST['description'])) {
 
-        if (!empty($_POST['name']) AND
-            !empty($_POST['firstname']) AND
-            !empty($_POST['email']) AND
-            !empty($_POST['description'])) {
-            
-				include "dbConnect.php";
-
+        if (!(empty($_POST['name'])) AND
+            !(empty($_POST['firstname'])) AND
+            !(empty($_POST['email'])) AND
+            !(empty($_POST['description']))) {
+			
 				// SANITIZE
 				$name = htmlspecialchars($_POST['name']);
 				$firstname = htmlspecialchars($_POST['firstname']);
@@ -24,8 +20,13 @@ var_dump($_POST);
 				if (false === filter_var($email, FILTER_VALIDATE_EMAIL)) {
 					$errors['email'] = "This email is invalid.";
 				}
-			
-	
+
+				include "uploadPicture.php";
+				$uploadOk = uploadPicture();
+				var_dump($uploadOk);
+				include "dbConnect.php";
+
+				if ($uploadOk == 1) {
 				try {
 					$request = $db->prepare("INSERT INTO support (`name`, `firstname`, `email`, `file`, `description`)
 						VALUES ( ?, ?, ?, ?, ?)");
@@ -33,13 +34,16 @@ var_dump($_POST);
 						$name,
 						$firstname,
 						$email,
-						$_POST['file'],
+						$_FILES['file']['name'],
 						$description));
 	
 					echo "Your request has been successfully sent.";
 				} catch (Exception $e) {
 					echo $e->getMessage();
-				}	
+				}
+				} else {
+					echo "Your request has been NOT successfully sent.";
+				}
 
         } else {
             echo "Variable is empty.<br>";
