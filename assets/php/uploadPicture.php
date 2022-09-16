@@ -45,9 +45,9 @@ if ($uploadOk == 1) {
     // $fileExt = "." . strtolower(substr($_FILES['file']['name'], '.'));
     $tmpName = $_FILES['file']['tmp_name'];
     $uniqueName = md5(uniqid(rand(), true));
-    $fileName = $target_dir . $_FILES['file']['name'];
+    $fileName = $target_dir . $uniqueName .".". $imageFileType;
 
-    if (move_uploaded_file($tmpName, $target_dir.$_FILES['file']['name'])) {
+    if (move_uploaded_file($tmpName, $fileName)) {
       echo "Image upload.";
     } else {
       echo "Image NOT upload.";

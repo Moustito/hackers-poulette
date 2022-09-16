@@ -23,7 +23,6 @@
 
 				include "uploadPicture.php";
 				$uploadOk = uploadPicture();
-				var_dump($uploadOk);
 				include "dbConnect.php";
 
 				if ($uploadOk == 1) {

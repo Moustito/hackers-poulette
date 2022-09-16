@@ -1,0 +1,46 @@
+@import "variables";
+
+body {
+    .index__header {
+      background: rgb(246,246,246);
+      background: linear-gradient(180deg, rgba(246,246,246,1) 80%, rgba(255,255,255,0) 100%);
+      margin-bottom: 50px;
+      &__div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        &__title {
+          h1 {
+            color: black;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+            font-weight: 900;
+            font-size: 27px;
+          }
+        }
+        nav {
+          width: 20%;
+          display: flex;
+          justify-content: space-between;
+          a {
+            text-decoration: none;
+            color: black;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+            font-size: 20px;
+            border-bottom: 1px solid;
+            padding: 5px;
+          }
+          a:hover {
+            color: black;
+            border-bottom: 1px solid red;
+          }
+          a:active {
+            color: white;
+            background-color: red;
+          }
+        }
+      }
+    }
+}

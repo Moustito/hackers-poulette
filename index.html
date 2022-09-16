@@ -1,25 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script type="module" src="assets/js/main.js"></script>
     <title>Hackers-poulette</title>
-</head>
-<body>
-    <h1>Contact</h1>
-    <hr>
-    <form id="form" action="assets/php/index.php" method="post" enctype="multipart/form-data">
-        <input id="name" class="input" type="text" name="name" value="" placeholder="Name">
-        <input id="firstname" class="input" type="text" name="firstname" value="" placeholder="Firstname">
-        <input id="email" class="input" type="email" name="email" value="" placeholder="Email">
-        <input id="file" class="input" type="file" name="file" value="" accept=".jpg, .png, .gif">
-        <textarea id="description" class="input" type="text" name="description" value="" placeholder="Description..."></textarea>
-        
-        <input id="submit" type="submit" name="submit" value="Submit">
-    </form>
-</body>
+  </head>
+  <body>
+    <header class="index__header">
+        <div class="index__header__div">
+        <a class="index__header__div__title" href="index.html"><h1>Hackers-poulette.</h1></a>
+        <nav>
+            <a href="">Product</a>
+            <a href="">About</a>
+            <a href="index.html">Contact</a>
+        </nav>
+    </div>
+    </header>
+    <main class="index__main">
+      <h3>Send me a little message...</h3>
+      <hr/>
+      <form
+        id="form"
+        class="index__main__form"
+        action="assets/php/index.php"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          id="name"
+          class="index__main__form__input"
+          type="text"
+          name="name"
+          value=""
+          placeholder="Name"
+        />
+        <input
+          id="firstname"
+          class="index__main__form__input"
+          type="text"
+          name="firstname"
+          value=""
+          placeholder="Firstname"
+        />
+        <input
+          id="email"
+          class="index__main__form__input"
+          type="email"
+          name="email"
+          value=""
+          placeholder="Email"
+        />
+        <input
+          id="file"
+          class="index__main__form__input"
+          type="file"
+          name="file"
+          value=""
+          accept=".jpg, .png, .gif"
+        />
+        <textarea
+          id="description"
+          class="index__main__form__input index__main__form__textarea"
+          type="text"
+          name="description"
+          value=""
+          placeholder="Description..."
+        ></textarea>
+
+        <input id="submit" type="submit" name="submit" value="Submit" />
+      </form>
+    </main>
+  </body>
 </html>

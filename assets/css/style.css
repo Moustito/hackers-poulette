@@ -1,16 +1,16 @@
-body h1 {
+body .index__main h3 {
   color: black;
-  font-size: 100px;
+  font-size: 50px;
   text-align: center;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   margin: 50px, 50px, 0px, 50px;
 }
-body hr {
-  width: 20%;
+body .index__main hr {
+  width: 40%;
   margin-bottom: 50px;
   border: 1px solid red;
 }
-body #form {
+body .index__main__form {
   width: 80%;
   margin: 0 auto;
   display: grid;
@@ -18,28 +18,28 @@ body #form {
   grid-template-rows: 1fr, 1fr, 1fr, 1fr, 1fr;
   grid-template-areas: "name email" "firstname file" "description description" "submit submit";
 }
-body #form .input {
+body .index__main__form__input {
   border: 0;
   border-bottom: 1px solid #929090;
   margin: 10px;
 }
-body #form #name {
+body .index__main__form #name {
   grid-area: name;
 }
-body #form #firstname {
+body .index__main__form #firstname {
   grid-area: firstname;
 }
-body #form #email {
+body .index__main__form #email {
   grid-area: email;
 }
-body #form #file {
+body .index__main__form #file {
   grid-area: file;
   border-bottom: 1px solid #929090;
 }
-body #form #description {
+body .index__main__form #description {
   grid-area: description;
 }
-body #form #submit {
+body .index__main__form #submit {
   grid-area: submit;
   margin-top: 50px;
   padding: 10px;
@@ -47,3 +47,56 @@ body #form #submit {
   color: white;
   border: 0;
 }
+body .index__main__form #submit:hover {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid red;
+  color: black;
+}
+body .index__main__form #submit:active {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: 0;
+}
+
+body .index__header {
+  background: rgb(246, 246, 246);
+  background: linear-gradient(180deg, rgb(246, 246, 246) 80%, rgba(255, 255, 255, 0) 100%);
+  margin-bottom: 50px;
+}
+body .index__header__div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+body .index__header__div__title h1 {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 900;
+  font-size: 27px;
+}
+body .index__header__div nav {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+body .index__header__div nav a {
+  text-decoration: none;
+  color: black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 20px;
+  border-bottom: 1px solid;
+  padding: 5px;
+}
+body .index__header__div nav a:hover {
+  color: black;
+  border-bottom: 1px solid red;
+}
+body .index__header__div nav a:active {
+  color: white;
+  background-color: red;
+}/*# sourceMappingURL=style.css.map */
